@@ -43,3 +43,25 @@ function playRound(playerSelection, computerSelection) {
     console.log("You Win! Scissors beats Paper");
   }
 }
+
+let computerSelection;
+
+// Playing game for many Rounds
+
+function game() {
+  for (let i = 0; i < 5; i++) {
+    computerSelection = computerPlay();
+    console.log(playRound(playerSelection, computerSelection));
+  }
+}
+
+// Geting Input from User
+const playerChoice = prompt();
+// Changing player input to lowercase
+const playerSelection = playerChoice.toLocaleLowerCase();
+
+console.log(game());
+
+// Displaying the Score
+console.log(`Player Score: ${playerScore}`);
+console.log(`Computer Score: ${computerScore}`);
