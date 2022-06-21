@@ -9,6 +9,17 @@ function computerPlay() {
   return randomChoice;
 }
 
+// Geting User Selection
+const buttons = document.querySelectorAll("[data-selection]");
+buttons.forEach((buttons) => {
+  buttons.addEventListener("click", (e) => {
+    const selectionName = buttons.dataset.selection;
+    playerSelection = selectionName;
+    computerSelection = computerPlay();
+    console.log(playRound(playerSelection, computerSelection));
+  });
+});
+
 // Single Round of Rock Paper Scissors
 
 function playRound(playerSelection, computerSelection) {
@@ -43,24 +54,6 @@ function playRound(playerSelection, computerSelection) {
     console.log("You Win! Scissors beats Paper");
   }
 }
-
-let computerSelection;
-
-// Playing game for many Rounds
-
-function game() {
-  for (let i = 0; i < 5; i++) {
-    computerSelection = computerPlay();
-    console.log(playRound(playerSelection, computerSelection));
-  }
-}
-
-// Geting Input from User
-const playerChoice = prompt();
-// Changing player input to lowercase
-const playerSelection = playerChoice.toLocaleLowerCase();
-
-console.log(game());
 
 // Displaying the Score
 console.log(`Player Score: ${playerScore}`);
