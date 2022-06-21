@@ -4,13 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
     <title>Document</title>
   </head>
   <body>
     <h1>Rock Paper Scissors</h1>
-    <button data-selection="rock">Rock</button>
-    <button data-selection="paper">Paper</button>
-    <button data-selection="scissors">Scissors</button>
-    <script src="app.js"></script>
+    <div class="selections">
+      <button class="selection" data-selection="rock">✊</button>
+      <button class="selection" data-selection="paper">✋</button>
+      <button class="selection" data-selection="scissors">✌️</button>
+    </div>
+    <div class="result">
+      <div class="you">You: <span>0</span></div>
+      <div class="computer">Computer: <span>0</span></div>
+    </div>
   </body>
 </html>
