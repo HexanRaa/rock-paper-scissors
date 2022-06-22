@@ -9,6 +9,9 @@ function computerPlay() {
   return randomChoice;
 }
 
+const yourscore = document.querySelector("[data-result='yourscore']");
+const compscore = document.querySelector("[data-result='compscore']");
+
 // Geting User Selection
 const buttons = document.querySelectorAll("[data-selection]");
 buttons.forEach((buttons) => {
@@ -17,6 +20,10 @@ buttons.forEach((buttons) => {
     playerSelection = selectionName;
     computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
+
+    // Displaying Score
+    yourscore.replaceChildren(playerScore);
+    compscore.replaceChildren(computerScore);
   });
 });
 
@@ -54,7 +61,3 @@ function playRound(playerSelection, computerSelection) {
     console.log("You Win! Scissors beats Paper");
   }
 }
-
-// Displaying the Score
-console.log(`Player Score: ${playerScore}`);
-console.log(`Computer Score: ${computerScore}`);
