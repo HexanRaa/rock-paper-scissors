@@ -9,10 +9,12 @@ function computerPlay() {
   return randomChoice;
 }
 
-const yourscore = document.querySelector("[data-result='yourscore']");
-const compscore = document.querySelector("[data-result='compscore']");
-const playerChoice = document.querySelector("[data-choices='player']");
-const compChoice = document.querySelector("[data-choices='comp']");
+const yourscore = document.getElementById("yourscore");
+const compscore = document.getElementById("compscore");
+const playerChoice = document.getElementById("player");
+const compChoice = document.getElementById("comp");
+const winnerdiv = document.getElementById("winner");
+const winner = document.createElement("h1");
 
 // Geting User Selection
 const buttons = document.querySelectorAll("[data-selection]");
@@ -32,6 +34,16 @@ buttons.forEach((buttons) => {
     // Displaying the choices
     playerChoice.replaceChildren(playerSelection);
     compChoice.replaceChildren(computerSelection);
+
+    // Checking Winner
+    if (playerScore === 5 && playerScore > computerScore) {
+      winner.textContent = "You WON!";
+      winnerdiv.appendChild(winner);
+      gameEnd();
+    } else if (computerScore === 5 && computerScore > playerScore) {
+      winner.textContent = "Computer WON!";
+      gameEnd();
+    }
   });
 });
 
@@ -93,4 +105,10 @@ function changeChoices() {
       computerSelection = "✌️";
       break;
   }
+}
+
+function gameEnd() {
+  setTimeout(() => {
+    window.location.reload();
+  }, 5000);
 }

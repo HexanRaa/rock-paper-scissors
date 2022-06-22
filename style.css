@@ -36,3 +36,7 @@ h1 {
   text-transform: capitalize;
   gap: 5%;
 }
+
+#winner {
+  margin-top: 3rem;
+}
