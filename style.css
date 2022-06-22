@@ -7,11 +7,14 @@ h1 {
   text-align: center;
 }
 
-.selections {
-  margin-top: 3%;
+.flex {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.selections {
+  margin-top: 3%;
   gap: 5%;
 }
 
@@ -23,9 +26,13 @@ h1 {
 
 .result {
   margin-top: 3rem;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 2rem;
   gap: 1rem;
+}
+
+.choices {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  gap: 5%;
 }

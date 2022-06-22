@@ -10,14 +10,18 @@
   </head>
   <body>
     <h1>Rock Paper Scissors</h1>
-    <div class="selections">
+    <div class="selections flex">
       <button class="selection" data-selection="rock">✊</button>
       <button class="selection" data-selection="paper">✋</button>
       <button class="selection" data-selection="scissors">✌️</button>
     </div>
-    <div class="result">
+    <div class="result flex">
       <div>You: <span data-result="yourscore">0</span></div>
       <div>Computer: <span data-result="compscore">0</span></div>
+    </div>
+    <div class="choices flex">
+      <div data-choices="player"></div>
+      <div data-choices="comp"></div>
     </div>
   </body>
 </html>
